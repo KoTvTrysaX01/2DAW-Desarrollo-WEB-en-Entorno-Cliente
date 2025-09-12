@@ -1,5 +1,4 @@
 console.log("¡Hola desde Node.js!");
-
 const readline = require("readline");
 
 const rl = readline.createInterface({
