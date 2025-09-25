@@ -4,32 +4,6 @@ const rl = readline.createInterface({
     output: process.stdout
 })
 
-let contador;
-
-const pedirValores = () => {
-    return new Promise((resolve) => {
-        rl.question('Valor inicial: ', (inicio) => {
-            rl.question('Valor a sumar: ', (paso) => {
-                contador = crearContador(parseInt(inicio), parseInt(paso));
-                resolve();
-            })
-        })
-    })
-}
-
-const iniciarCiclo = () => {
-    return new Promise((resolve) => {
-        rl.question("Escribe 'salir' para salir: ", function (answer) {
-            if (answer == 'salir') {
-                rl.close();
-                return resolve();
-            }
-            console.log(`El resultado: ${contador()}`);
-            iniciarCiclo();
-        });
-    })
-}
-
 function crearContador(inicio, paso) {
     return function () {
         inicio += paso;
@@ -37,9 +11,20 @@ function crearContador(inicio, paso) {
     }
 }
 
-const main = async () => {
-    await pedirValores();
-    await iniciarCiclo();
-}
-
-main()
+rl.question('Introduce un inicio: ', (inicio) => {
+    rl.question('Introduce un paso: ', (paso) => {
+        const contador = crearContador(parseInt(inicio), parseInt(paso))
+        console.log("El resultado es: " + contador());
+        function preguntar() {
+            rl.question("Escribe 'salir' para salir: ", (resp) => {
+                if (resp.toLocaleLowerCase() === "no") {
+                    rl.close()
+                } else {
+                    console.log("El resultado es: " + contador());
+                    preguntar();
+                }
+            })
+        }
+        preguntar();
+    })
+})
