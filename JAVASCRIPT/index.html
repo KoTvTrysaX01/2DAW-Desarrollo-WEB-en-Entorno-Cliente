@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        function pedirVoto() {
+            if(confirm("Esta página está genial (ya la puedes ver). Me das tu voto?")){
+                window.open("http:/www-loquesea.com/votar-php?idvoto=12111", "", "");
+            }
+        }
+    </script> -->
+</head>
+
+<body onload="pedirVoto()">
+    <!-- <button onfocus="clicks()">Haz click</button>
+    <input type="text" onchange="alert('Texto cambiado')"/>
+    <h1 id="titulo">Hola Mundo</h1>
+    <script>
+        function clicks(){
+        const titulo = document.getElementById("titulo");
+        titulo.style.color = "blue";
+        titulo.textContent = "Texto cambiado con JavaScript";
+        } 
+    </script>-->
+
+    <!-- <p id="miObjeto">Mi mensaje</p>
+    <script refres>
+        function mostrarMenstaje() {
+            alert("Hola");
+        }
+        document.getElementById("miObjeto").onclick = mostrarMenstaje;
+    </script> -->
+
+    <!-- <h1>Página SuperChula</h1>
+    <br>
+    <p>Está página está muy bonita!</p>
+    <br> -->
+
+    <p id="miObjeto">Pulsar en este parrafo</p>
+    <script>
+        function mostrarMensaje(evento){
+            if(evento.type === "keyup"){
+                alert(evento.keyCode);
+            }else if(evento.type === "click"){
+                alert(evento.clientX + " " + evento.clientY)
+            }
+        }
+        document.getElementById("miObjeto").onlick=mostrarMensaje;
+        document.onkeyup=mostrarMensaje;
+    </script>
+</body>
+
+</html>
