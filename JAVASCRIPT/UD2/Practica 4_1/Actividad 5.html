@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #empty_bucket {
+            width: 250px;
+        }
+
+        #paper_ball {
+            width: 150px;
+        }
+    </style>
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.src = "full_bucket.png";
+        }
+    </script>
+</head>
+
+<body>
+    <div><img id="empty_bucket" ondrop = "drop(event)" ondragover = "allowDrop(event)" src="empty_bucket.png"></div>
+    <div><img id="paper_ball" draggable="true" ondragstart="drag(event)" src="paper_ball.png"></div>
+</body>
+
+</html>
