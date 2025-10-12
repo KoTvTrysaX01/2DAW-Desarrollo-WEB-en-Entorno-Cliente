@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DWEC UD2 - Práctica 4_1 - Ejercicio 5</title>
+    <style>
+        #empty_bucket {
+            height: 300px;
+        }
+
+        #paper_ball {
+            height: 150px;
+        }
+    </style>
+
+    <script>
+        let contador = 0;
+        function allowDrop(e) {
+            e.preventDefault();
+        }
+        // function drag(ev) {
+        //     ev.dataTransfer.setData("text", ev.target.id);
+        // }
+        function drop(e) {
+            e.preventDefault();
+            // var data = ev.dataTransfer.getData("text");
+            switch(contador){
+                case 0:
+                    e.target.src = "bucket_1.png";
+                    contador++;
+                    break;
+                case 1:
+                    e.target.src = "bucket_2.png";
+                    contador++;
+                    break;
+                case 2:
+                    e.target.src = "bucket_3.png";
+                    contador++;
+                    break;
+                case 3:
+                    e.target.src = "bucket_4.png";
+                    contador++;
+                    document.getElementById("paper_ball").style.visibility= "hidden";
+                    break;
+                default:
+                    console.log("La papelera está llena / Un error");
+                    break;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div><img id="empty_bucket" ondrop="drop(event)" ondragover="allowDrop(event)" src="bucket_0.png"></div>
+    <div><img id="paper_ball" draggable="true" ondragstart="drag(event)" src="paper_ball.png"></div>
+</body>
+
+</html>
