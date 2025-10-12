@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DWEC UD2 - Práctica 4_2 - Ejercicio 2</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    #myBox {
+      height: 200px;
+      width: 250px;
+      display: flex;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="myBox">
+    <img src="box.png">
+  </div>
+  <script>
+    const myBox = document.getElementById("myBox");
+    const speed = 10;
+    let x = 0;
+    let y = 0;
+
+    document.addEventListener("keydown", event => {
+      if (event.key.startsWith("Arrow")) {
+        switch (event.key) {
+          case "ArrowUp":
+            console.log("Hola");
+
+            y -= speed;
+            break;
+          case "ArrowDown":
+            y += speed;
+            break;
+          case "ArrowLeft":
+            x -= speed;
+            break;
+          case "ArrowRight":
+            x += speed;
+            break;
+          default:
+            console.log("Un error");
+            break;
+        }
+        myBox.style.top = `${y}px`;
+        myBox.style.left = `${x}px`;
+      }
+    })
+  </script>
+</body>
+
+</html>
