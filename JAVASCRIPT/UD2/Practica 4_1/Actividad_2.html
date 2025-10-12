@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DWEC UD2 - Práctica 4_1 - Ejercicio 2</title>
+</head>
+
+<body>
+  <button onclick="comenzarSaludos()">Comenzar Saludos</button>
+  <br><br>
+  <button onclick="pararSaludos()">Parar Saludos</button>
+  <script>
+
+    let miInterval;
+
+    function comenzarSaludos() {
+      miInterval = setInterval(() => alert("hola"), 5000);
+    }
+
+    function pararSaludos() {
+      clearInterval(miInterval);
+    }
+  </script>
+</body>
+
+</html>

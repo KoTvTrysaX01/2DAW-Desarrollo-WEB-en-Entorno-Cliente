@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DWEC UD2 - Práctica 4_1 - Ejercicio 3</title>
+</head>
+
+<body>
+    <p>Presione una tecla</p>
+    <p>La lista de DNIs: </p>
+    <p id="lista"></p>
+    <p id="num_dnis"></p>
+    <script>
+        let par = document.getElementById("lista");
+        let letra = '';
+
+        onkeypress = function (e) {
+            par.textContent = "";
+            letra = e.key.toUpperCase();
+            console.log(letra);
+
+            let numero;
+            switch (letra) {
+                case 'T':
+                    numero = 0;
+                    break;
+                case 'R':
+                    numero = 1;
+                    break;
+                case 'W':
+                    numero = 2;
+                    break;
+                case 'A':
+                    numero = 3;
+                    break;
+                case 'G':
+                    numero = 4;
+                    break;
+                case 'M':
+                    numero = 5;
+                    break;
+                case 'Y':
+                    numero = 6;
+                    break;
+                case 'F':
+                    numero = 7;
+                    break;
+                case 'P':
+                    numero = 8;
+                    break;
+                case 'D':
+                    numero = 9;
+                    break;
+                case 'X':
+                    numero = 10;
+                    break;
+                case 'B':
+                    numero = 11;
+                    break;
+                case 'N':
+                    numero = 12;
+                    break;
+                case 'J':
+                    numero = 13;
+                    break;
+                case 'Z':
+                    numero = 14;
+                    break;
+                case 'S':
+                    numero = 15;
+                    break;
+                case 'Q':
+                    numero = 16;
+                    break;
+                case 'V':
+                    numero = 17;
+                    break;
+                case 'H':
+                    numero = 18;
+                    break;
+                case 'L':
+                    numero = 19;
+                    break;
+                case 'C':
+                    numero = 20;
+                    break;
+                case 'K':
+                    numero = 21;
+                    break;
+                case 'E':
+                    numero = 22;
+                    break;
+                default:
+                    par.textContent = `Letra ${letra} no es una letra válida.`;
+                    break;
+            }
+
+            calcularDNI(letra, numero);
+        }
+
+
+
+        function calcularDNI(letra, numero) {
+            let contador = 0;
+            for (let i = 0; i <= 9999; i++) { 
+                if ((i % 23) == numero) {
+                    contador++;
+                    let dni = `${i}${letra}`;
+
+                    while(dni.length < 5){
+                        dni = "0" + dni;
+                    }
+ 
+                    par.textContent += (`${dni} `);
+                }
+            }
+            document.getElementById("num_dnis").textContent = `El número de DNIs: ${contador}`;
+        }
+
+    </script>
+</body>
+
+</html>

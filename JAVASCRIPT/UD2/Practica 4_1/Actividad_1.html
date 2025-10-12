@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DWEC UD2 - Práctica 4_1 - Ejercicio 1</title>
+</head>
+<body>
+    <p id="parrafo">Para ver las coordenadas, mueva el ratón</p>
+    <script>
+        onmousemove = function(e){
+            let par = document.getElementById("parrafo");
+            par.textContent = `Las coordenadas: X ${e.x} Y ${e.y}`;
+        }
+    </script>
+</body>
+</html>
