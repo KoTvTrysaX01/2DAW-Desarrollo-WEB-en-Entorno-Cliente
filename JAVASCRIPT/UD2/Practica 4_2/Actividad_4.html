@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DWEC UD2 - Práctica 4_2 - Ejercicio 4</title>
 </head>
+
 <body>
     <p id="parrafo"></p>
     <script>
-        document.addEventListener("keypress", event => {
-            const par = document.getElementById("parrafo");
-            par.textContent = event.key;
-        })
+        document.addEventListener("keyup", function (e) {
+            e.preventDefault();
+            let par = document.getElementById("parrafo");
+
+            if (e.shiftKey) {
+                par.textContent = `Shift + ${e.key}`;
+            }
+            else if (e.ctrlKey) {
+                par.textContent = `Ctrl + ${e.key}`;
+            }
+            else if (e.altKey) {
+                par.textContent = `Alt + ${e.key}`;
+            }
+            else {
+                par.textContent = `${e.key}`;
+            }
+        });
     </script>
 </body>
+
 </html>

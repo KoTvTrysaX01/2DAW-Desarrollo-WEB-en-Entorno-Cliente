@@ -23,7 +23,7 @@
 
 <body>
   <div id="myBox">
-    <img src="box.png">
+    <img src="./assets/box.png">
   </div>
   <script>
     const myBox = document.getElementById("myBox");
@@ -32,30 +32,36 @@
     let y = 0;
 
     document.addEventListener("keydown", event => {
-      if (event.key.startsWith("Arrow")) {
-        switch (event.key) {
-          case "ArrowUp":
-            console.log("Hola");
+      switch (event.keyCode) {
 
-            y -= speed;
-            break;
-          case "ArrowDown":
-            y += speed;
-            break;
-          case "ArrowLeft":
-            x -= speed;
-            break;
-          case "ArrowRight":
-            x += speed;
-            break;
-          default:
-            console.log("Un error");
-            break;
-        }
-        myBox.style.top = `${y}px`;
-        myBox.style.left = `${x}px`;
+        case 38:
+        case 104:
+          y -= speed;
+          break;
+
+        case 40:
+        case 98:
+          y += speed;
+          break;
+
+        case 37:
+        case 100:
+          x -= speed;
+          break;
+
+        case 39:
+        case 102:
+          x += speed;
+          break;
+
+        default:
+          console.log("Tecla incorrecta");
+          break;
       }
-    })
+      myBox.style.top = `${y}px`;
+      myBox.style.left = `${x}px`;
+    }
+    )
   </script>
 </body>
 
