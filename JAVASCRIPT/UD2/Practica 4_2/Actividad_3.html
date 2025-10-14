@@ -7,7 +7,7 @@
     <style>
         .container{
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
         }
 
@@ -16,17 +16,36 @@
             height: 200px;
 
         }
+
         img{
             height: 100%;
             width: 100%;
         }
+
+        p{
+            text-align: center;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
+    <script>
+        function showURL(imagen, position, color){
+            let url_imagen = document.getElementById("url_imagen");
+            url_imagen.textContent = imagen.getAttribute("src");
+            url_imagen.style.textAlign = position;
+            url_imagen.style.color = color;
+        }
+        function hideURL(){
+            let url_imagen = document.getElementById("url_imagen");
+            url_imagen.textContent = "";
+        }
+    </script>
     <div class="container">
-        <div class="imagen"> <img src="https://media.istockphoto.com/id/1205289672/es/foto/majestuoso-amanecer-brillante-sobre-el-oc%C3%A9ano.jpg?s=612x612&w=0&k=20&c=HDmWno7w4J1iTJN85fEdqVHtwZGjltmO2I0f2wU5J2o=" alt="sunrise"></div>
-        <div class="imagen"> <img src="https://media.istockphoto.com/id/1298109253/photo/bright-summer-sun-shining-over-a-lake-within-the-dunes-of-nature-r-reserve-t-zwanenwater-in.jpg?s=612x612&w=0&k=20&c=a1auu2lG4ov89yO-M1GOOIVB_hH6z2oZhvcCOj_17bU=" alt="midday"></div>
-        <div class="imagen"> <img src="https://img.freepik.com/foto-gratis/al-atardecer-playa-tropical-mar-palmeras-coco_74190-1075.jpg?semt=ais_hybrid&w=740&q=80" alt="sunset"></div>
+        <div class="imagen"><img onmouseover="showURL(this, 'left', 'orange')" onmouseleave="hideURL()" src="./assets/sun_rise.jpg" alt="sunrise"></div>
+        <div class="imagen"><img onmouseover="showURL(this, 'center', 'blue')" onmouseleave="hideURL()" src="./assets/mid_day.jpg" alt="midday"></div>
+        <div class="imagen"><img onmouseover="showURL(this, 'right', 'red')" onmouseleave="hideURL()" src="./assets/sun_set.jpg" alt="sunset"></div>
     </div>
+    <p id="url_imagen"></p>
 </body>
 </html>

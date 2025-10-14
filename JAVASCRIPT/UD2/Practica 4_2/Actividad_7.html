@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DWEC UD2 - Práctica 4_2 - Ejercicio 7</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+
+        #cuadro{
+            width: 200px;
+            height: 300px;
+        }
+
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function flipCard(){
+            document.getElementById("carta").src="./assets/card_front.png"
+        }
+
+        function hideCard(){
+            document.getElementById("carta").src="./assets/card_back.png"
+        }
+    </script>
+    <div class="container">
+        <div id="cuadro">
+            <img id="carta" onmousedown="flipCard()" onmouseup="hideCard()" src="./assets/card_back.png" alt="card_back">
+        </div>
+    </div>
+    
+</body>
+</html>

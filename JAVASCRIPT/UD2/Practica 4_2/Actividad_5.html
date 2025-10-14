@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DWEC UD2 - Práctica 4_2 - Ejercicio 5</title>
+</head>
+
+<body>
+    <script>
+        document.addEventListener('mousedown', (e) => {
+            let par = document.getElementById("miH2");
+            if (e.button === 0) {
+                par.textContent = "Has pulsado con el botón izquierdo";
+            } else if (e.button === 2) {
+                par.textContent = "Has pulsado con el botón derecho";
+            }
+        });
+    </script>
+    <h2 style="text-align: center;" id="miH2"></h2>
+</body>
+
+</html>

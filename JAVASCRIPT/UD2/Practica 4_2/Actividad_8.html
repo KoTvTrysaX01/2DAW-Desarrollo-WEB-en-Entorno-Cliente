@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DWEC UD2 - Práctica 4_2 - Ejercicio 8</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+
+        #cuadro{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.addEventListener("click", (e) => {
+            document.getElementById("cuadro").style.backgroundColor = "#FFFF00";  
+            document.getElementById("coor").textContent = `X: ${e.x}, Y: ${e.y}`;
+        });
+
+        document.addEventListener("keypress", (e) => {
+            document.body.style.backgroundColor = "#CCE6FF";
+            document.getElementById("cod_ascii").textContent = `Carácter: ${e.key},   Código ASCII: ${e.keyCode}`;
+
+        })
+
+        document.addEventListener("mousemove", () => {
+            document.body.style.backgroundColor = "#FFFFFF";
+        })
+
+    </script>
+    <div class="container">
+        <div id="cuadro">
+            <h2>Un cuadro de mensaje</h2><br>
+            <p id="coor"></p>
+            <p id="cod_ascii"></p>
+        </div>
+    </div>
+</body>
+
+</html>
