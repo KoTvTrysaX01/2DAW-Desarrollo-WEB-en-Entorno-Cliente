@@ -4,6 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <title>DWEC UD2 - Práctica 5 - Ejercicio 3</title>
+    <style>
+        #div_parrafos,
+        #div_lista {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #resultado {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,31 +35,35 @@
     <a href="http://final.com">Enlace fuera de los párrafos</a>
 
     <hr>
-    <div id="parrafos" style="display: flex; flex-direction: column;"></div>
-    <div id="div_lista">
-        <ol id="lista">
-
-        </ol>
-    </div>
-
     <div id="resultado">
-        <button id="but_par" onclick="anadePar()">Añadir un nuevo párrafo</button>
-        <button id="but_lista" onclick="anadeLista()">Añadir un nuevo elemento de la lista</button>
+        <div id="div_parrafos" ">
+            Contenedor de párrafos:
+            <button id=" but_par" onclick="anadePar()">Añadir un nuevo párrafo</button>
+        </div>
+        <div id="div_lista"> Contenedor de la lista:
+            <button id="but_lista" onclick="anadeLista()">Añadir un nuevo elemento de la lista</button>
+            <ol id="lista">
+
+            </ol>
+        </div>
     </div>
+    <br>
+
+
     <script>
-        let parrafos = document.getElementById("parrafos");
+        let parrafos = document.getElementById("div_parrafos");
         let lista = document.getElementById("lista");
         let contador = 0;
-        function anadePar(){
-            console.log("hola");
-            
-            let p = document.createElement("p").textContent = `Un nuevo parrafo: ${contador++}`;
-            parrafos.append(p);
+        function anadePar() {
+            let p = document.createElement("p");
+            p.textContent = `Un nuevo parrafo: ${contador++}`;
+            parrafos.appendChild(p);
         }
 
-        function anadeLista(){
-            let li = document.createElement("li").textContent = `Un nuevo elemento de la lista`;
-            lista.append(li);
+        function anadeLista() {
+            let li = document.createElement("li");
+            li.textContent = `Un nuevo elemento de la lista`;
+            lista.appendChild(li);
         }
     </script>
 </body>

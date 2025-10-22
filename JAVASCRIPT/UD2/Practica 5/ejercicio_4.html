@@ -1,11 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DWEC UD2 - Práctica 5 - Ejercicio 4</title>
+    <title>DWEC UD2 - Práctica 5 - Ejercicio 3</title>
+    <style>
+        .oculto {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h1>Ejercicio sobre Enlaces y el DOM</h1>
+
+    <p><span>Primer párrafo con un </span><a href="http://example.com">enlace</a>.</p>
+    <p><span>Segundo párrafo con dos enlaces:</span><a href="http://prueba">enlace 1</a>,
+        <a href="http://otraweb.com">enlace 2</a>.
+    </p>
+    <p><span>Tercer párrafo con tres enlaces:</span>
+        <a href="http://prueba">enlace 1</a>,
+        <a href="http://prueba">enlace 2</a>,
+        <a href="http://example.org">enlace 3</a>.
+    </p>
+
+    <a href="http://final.com">Enlace fuera de los párrafos</a>
+
+    <hr>
+
+    <div id="resultado"></div>
+    <script>
+        let enlaces = document.getElementsByTagName("a");
+        for (let i = 0; i < enlaces.length; i++) {
+            enlaces[i].addEventListener("click", (ev) => {
+                ev.preventDefault();
+                cambiarse(enlaces[i]);
+            })
+        }
+
+        function cambiarse(enlace) {
+            let parent = enlace.parentNode;
+            console.log(parent.nodeName);
+            if (parent.nodeName == "P") {
+                parent.querySelector("span").classList.toggle("oculto");
+                if (enlace.innerHTML !== "Mostrar texto") {
+                    enlace.innerHTML = "Mostrar texto";
+                } else {
+                    enlace.innerHTML = "enlace";
+                }
+            } else {
+                enlace.innerHTML = (enlace.innerHTML=="Mostrar texto") ? "Enlace fuera de los párrafos" : "Mostrar texto";
+            }
+        }
+    </script>
 </body>
+
 </html>
