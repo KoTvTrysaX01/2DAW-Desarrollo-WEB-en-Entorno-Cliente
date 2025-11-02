@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <form name="ejemplo" method="POST" action="ejemplos/ej6.asp" target="_blank">
+        Por favor, complete su domicilio: <br>
+        <br>
+        Calle; <input type="text" name="calle" size="40">
+        Nro.: <input type="text" name="nro" size="3"><br>
+        Piso: <input type="text" name="piso" size="2">
+        Departamento: <input type="text" name="dto" size="2"><br>
+        Código Postal: <input type="text" name="cp" size="8">
+        Ciudad: <input type="text" name="ciudad" size="20">
+        Pais: <input type="text" name="pais" size="20"><br><br>
+        Verifique su domicilio: <input type="text" name="domicilio" size="80" readonly onfocus="completar(this.form)">
+        <br>
+        Si los datos no son correctos, <a onClick="ejemplo.domicilio.value=''" style="cursor: 'hand';">presione aquí</a> y
+        realice los cambios en los campos correspondientes.<br>
+        <input type="submit" value="Confirmar">
+    </form>
+</body>
+<script>
+    function completar(form) {
+        form.domicilio.value = "";
+        if (form.calle.value != "") {
+            form.domicilio.value += form.calle.value + " ";
+        }
+        if (form.nro.value != "") {
+            form.domicilio.value += "Nº " + form.nro.value + ", ";
+        }
+        if (form.piso.value != "") {
+            form.domicilio.value += "Piso " + form.piso.value + ", ";
+        }
+        if (form.dto.value != "") {
+            form.domicilio.value += "Dpto. \"" + form.dto.value + "\" - ";
+        }
+        if (form.cp.value != "") {
+            form.domicilio.value += "( " + form.calle.value + ") ";
+        }
+        if (form.ciudad.value != "") {
+            form.domicilio.value += form.ciudad.value + ", ";
+        }
+        if (form.pais.value != "") {
+            form.domicilio.value += form.pais.value + ", ";
+        }
+    }
+</script>
+
+</html>
