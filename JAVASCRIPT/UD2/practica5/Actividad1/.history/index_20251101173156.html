@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+  <title>Validación</title>
+  <link rel="stylesheet" href="style.css">
+  <body>
+    <h2>Introduce los datos y pulse comprobar</h2>
+    <fieldset>
+    <form id = "registartionForm" name="form1" method="post" action="" target=" _blank">
+        <label for = "dni">DNI:</label>
+        <input id="dni" type="text" name="dni" ><br>
+        <label for = "nombre">Nombre:</label>
+        <input id="nombre" type="text" name="nombre" ><br>
+        <label for = "fecha">Fecha de nacimiento:</label>
+         <input id="fecha" type="date" name="fecha" ><br>
+         <label for="hijos">Numero de hijos:</label>
+         <input type="number" name="hijos" id = "hijos" min = "0"><br>
+         <label for = "email"
+        EMAIL: <input id = "email" type="text" name="email" ><br>
+        Pagina web: <input type="url" name="web" id = "pagina" placeholder="http://www.ejemplo.com" required><br>
+        Contrasena: <input type="text" name="contrasena" id = "password" ><br>
+        <input type="submit" value = "Comprobar">
+    </form>
+    </fieldset>
+    
+
+    <div id="errorMessages"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

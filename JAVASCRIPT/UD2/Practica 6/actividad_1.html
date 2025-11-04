@@ -5,6 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actividad 1</title>
+    <style>
+        .correcto {
+            background-color: aquamarine;
+        }
+
+        .incorrecto {
+            background-color: rgb(250, 103, 103);
+        }
+
+    </style>
 </head>
 
 <body>
@@ -12,28 +22,32 @@
         <fieldset>
             <legend>Introduce los datos y pulsa Compobar</legend>
             <label for="dni">DNI: </label>
-            <input type="text" id="dni" name="dni" pattern="^[XYZ]?\d{5,8}-?[A-Z]$" placeholder="X1234567Z"
+            <input type="text" id="dni" name="dni" onchange="comprobarDni(this)" placeholder="X1234567Z"
                 required /><br><br>
             <label for="nombre">Nombre: </label>
-            <input type="text" id="nombre" name="nombre" pattern="([a-zA-Záéíóúñ]{4,40}( [a-zA-Záéíóúñ]{4,40})){1,2}"
-                placeholder="Nombre Apellido" required /><br><br>
+            <input type="text" id="nombre" name="nombre" onchange="comprobarNombre(this)" placeholder="Nombre Apellido"
+                required /><br><br>
             <label for="fecha_nac">Fecha de Nacimiento: </label>
-            <input type="date" id="fecha_nac" name="fecha_nac" required /><br><br>
+            <input type="date" id="fecha_nac" name="fecha_nac" onchange="comprobarFecha(this)" required /><br><br>
             <label for="num_hijos">Número de hijos: </label>
-            <input type="number" id="num_hijos" name="num_hijos" value="0" min="0" max="10" required /><br><br>
+            <input type="number" id="num_hijos" name="num_hijos" onchange="comprobarNum(this)" value="0" min="0"
+                max="10" required /><br><br>
             <label for="email">Email: </label>
-            <input type="email" id="email" name="email" placeholder="example@ej.com" required /><br><br>
+            <input type="email" id="email" name="email" placeholder="example@ej.com" onchange="comprobarEmail(this)"
+                required /><br><br>
             <label for="pag_web">Página WEB: </label>
-            <input type="url" id="pag_web" name="pag_web" placeholder="https://www.example.com" required /><br><br>
+            <input type="text" id="pag_web" name="pag_web" placeholder="www.example.com" onchange="comprobarWeb(this)"
+                required /><br><br>
             <label for="contrasena">Contraseña: </label>
-            <input type="password" id="contrasena" name="contrasena" minlength="8" maxlength="10" required /><br><br>
-            <input type="submit" value="Comprobar" onclick="enviar(this.form)">
+            <input type="password" id="contrasena" name="contrasena" minlength="8" maxlength="10"
+                onchange="comprobarContrasena(this)" required><br><br>
+            <input type="submit" value="Comprobar">
         </fieldset>
     </form>
 
-    <div id="datos">
+    <div id="datos" style="visibility: hidden;">
         <h2>Su datos:</h2>
-        <p id="p_dni">fefe</p>
+        <p id="p_dni"></p>
         <p id="p_nombre"></p>
         <p id="p_fecha_nac"></p>
         <p id="p_num_hijos"></p>
@@ -42,13 +56,140 @@
         <p id="p_contrasena"></p>
     </div>
     <script>
-        function enviar(form) {
-            if (form.dni.value == "Y5413702E") {
-                document.getElementById("datos").style.visibility == "hidden";
-            } else {
 
+        function comprobarDni(campo) {
+            var re = /^[XYZ]?\d{5,8}-?[A-Z]$/;
+            if (re.test(campo.value)) {
+                document.getElementById("p_dni").textContent = campo.value;
+                document.getElementById(campo.name).className = "correcto";
+            } else {
+                campo.value = "";
+                document.getElementById(campo.name).className = "incorrecto";
             }
         }
+
+        function comprobarNombre(campo) {
+            var re = /([a-zA-Záéíóúñ]{4,40}( [a-zA-Záéíóúñ]{4,40})){1,2}/;
+            if (re.test(campo.value)) {
+                document.getElementById("p_nombre").textContent = campo.value;
+                document.getElementById(campo.name).className = "correcto";
+            } else {
+                campo.value = "";
+                document.getElementById(campo.name).className = "incorrecto";
+            }
+        }
+
+        function comprobarFecha(campo) {
+            if (campo.value != "") {
+                document.getElementById("p_fecha_nac").textContent = campo.value;
+                document.getElementById(campo.name).className = "correcto";
+            } else {
+                campo.value = "";
+                document.getElementById(campo.name).className = "incorrecto";
+            }
+        }
+
+        function comprobarNum(campo) {
+            if (campo.value >= 0 && campo.value < 11) {
+                document.getElementById("p_num_hijos").textContent = campo.value;
+                document.getElementById(campo.name).className = "correcto";
+            } else {
+                campo.value = "";
+                document.getElementById(campo.name).className = "incorrecto";
+            }
+        }
+
+        function comprobarEmail(campo) {
+            var re = /^[a-z]*[@]{1}[a-z]*[\.]{1}[a-z]{2,3}$/;
+            if (re.test(campo.value)) {
+                document.getElementById("p_email").textContent = campo.value;
+                document.getElementById(campo.name).className = "correcto";
+            } else {
+                campo.value = "";
+                document.getElementById(campo.name).className = "incorrecto";
+            }
+        }
+
+        function comprobarWeb(campo) {
+            var re = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
+            if (re.test(campo.value)) {
+                document.getElementById("p_pag_web").textContent = campo.value;
+                document.getElementById(campo.name).className = "correcto";
+            } else {
+                campo.value = "";
+                document.getElementById(campo.name).className = "incorrecto";
+            }
+        }
+
+        function comprobarContrasena(campo) {
+            if (campo.value.length > 7 && campo.value.length < 11) {
+                document.getElementById("p_contrasena").textContent = campo.value;
+                document.getElementById(campo.name).className = "correcto";
+            } else {
+                campo.value = "";
+                document.getElementById(campo.name).className = "incorrecto";
+            }
+        }
+
+        // function comprobar(campo) {
+        //     if (campo.name = "dni") {
+        //         if (campo.validity.valid) {
+        //             document.getElementById(campo.name).className = "correcto";
+        //         } else {
+        //             document.getElementById(campo.name).className = "incorrecto";
+        //         }
+        //     }
+
+        //     if (campo.name = "nombre") {
+        //         if (campo.validity.valid) {
+        //             document.getElementById(campo.name).className = "correcto";
+        //         } else {
+        //             document.getElementById(campo.name).className = "incorrecto";
+        //         }
+        //     }
+
+        //     if (campo.name = "fecha_nac") {
+        //         if (campo.validity.valid) {
+        //             document.getElementById(campo.name).className = "correcto";
+        //         } else {
+        //             document.getElementById(campo.name).className = "incorrecto";
+        //         }
+        //     }
+
+        //     if (campo.name = "num_hijos") {
+        //         if (campo.validity.valid) {
+        //             document.getElementById(campo.name).className = "correcto";
+        //         } else {
+        //             document.getElementById(campo.name).className = "incorrecto";
+        //         }
+        //     }
+
+        //     if (campo.name = "email") {
+        //         if (campo.validity.valid) {
+        //             document.getElementById(campo.name).className = "correcto";
+        //         } else {
+        //             document.getElementById(campo.name).className = "incorrecto";
+        //         }
+        //     }
+
+        //     if (campo.name = "num_hijos") {
+        //         if (campo.validity.valid) {
+        //             document.getElementById(campo.name).className = "correcto";
+        //         } else {
+        //             document.getElementById(campo.name).className = "incorrecto";
+        //         }
+        //     }
+
+        //     if (campo.name = "email") {
+        //         if (campo.validity.valid) {
+        //             document.getElementById(campo.name).className = "correcto";
+        //         } else {
+        //             document.getElementById(campo.name).className = "incorrecto";
+        //         }
+        //     }
+        // }
+
+
     </script>
 </body>
 

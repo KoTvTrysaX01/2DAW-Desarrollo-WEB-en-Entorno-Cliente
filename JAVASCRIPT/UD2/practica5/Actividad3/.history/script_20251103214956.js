@@ -1,0 +1,52 @@
+window.onload = function (){
+  let form = document.getElementById("registrarForm");
+  let nombre = document.getElementById("nombre")
+  let contrasena = document.getElementById("contrasena")
+  let error = document.getElementById("errorMessages")
+ 
+
+  nombre.addEventListener("blur",esValidoNombre)
+  apellido.addEventListener("blur", esValidoContrasena)
+ 
+  function limpiar () {
+    error.innerHTML = ""
+  }
+
+  
+  function esValidoNombre() {
+    const valor = nombre.value.trim()
+    if(valor == "") {
+      error.innerHTML = " Nombre no puede ser vacio o hay otro error"
+      nombre.focus()
+      
+    } else {
+  
+      limpiar()
+    }
+  }
+
+  function esValidoContrasena() {
+    const valor = contrasena.value.trim()
+     if(valor == "") {
+      error.innerHTML = "Contraseno puede ser vacio"
+      
+      
+    } else {
+  
+      limpiar()
+    }
+
+  }
+  
+  form.addEventListener("submit",e => {
+    const mensaje = confirm("Deseas confirmar el envio de datos?")
+    if(!mensaje){
+      e.preventDefault()
+      alert("Los datos no envian")
+    } else {
+      alert("los datos se envian!")
+      limpiar()
+    }
+  })
+
+}

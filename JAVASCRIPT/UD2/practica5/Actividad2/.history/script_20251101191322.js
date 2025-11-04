@@ -1,0 +1,18 @@
+window.onload = function (){
+  let form = document.getElementById("registarForm");
+  let nombre = document.getElementById("nombre")
+  let apellido = document.getElementById("apellido")
+
+  nombre.addEventListener("blur",convertirMayuscula)
+  apellido.addEventListener("blur", convertirMayuscula)
+  
+
+  function convertirMayuscula(e) {
+    let nom = e.target
+    nom.value = nom.value.trim().toUpperCase()
+  }
+  function validNombre(nombre) {
+    return /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{5,40}( [a-zA-ZáéíóúÁÉÍÓÚñÑ]{5,40})*$/g.test(nombre)
+  }
+
+}
