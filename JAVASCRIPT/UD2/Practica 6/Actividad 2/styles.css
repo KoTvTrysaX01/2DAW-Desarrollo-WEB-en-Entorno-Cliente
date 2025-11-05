@@ -25,13 +25,13 @@ label {
     padding: 2px;
 }
 
-.cont2 {
+.formulario {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.div2 {
+.campos {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
