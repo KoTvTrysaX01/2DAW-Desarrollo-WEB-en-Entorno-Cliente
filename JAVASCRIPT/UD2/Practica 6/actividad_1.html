@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <form id="miFormulario">
+    <form>
         <fieldset>
             <legend>Introduce los datos y pulsa Compobar</legend>
             <label for="dni">DNI: </label>
@@ -44,17 +44,6 @@
             <input type="submit" value="Comprobar">
         </fieldset>
     </form>
-
-    <div id="datos" style="visibility: hidden;">
-        <h2>Su datos:</h2>
-        <p id="p_dni"></p>
-        <p id="p_nombre"></p>
-        <p id="p_fecha_nac"></p>
-        <p id="p_num_hijos"></p>
-        <p id="p_email"></p>
-        <p id="p_pag_web"></p>
-        <p id="p_contrasena"></p>
-    </div>
     <script>
 
         function comprobarDni(campo) {
@@ -130,6 +119,8 @@
                 document.getElementById(campo.name).className = "incorrecto";
             }
         }
+
+        // No funciona muy bien
 
         // function comprobar(campo) {
         //     if (campo.name = "dni") {
