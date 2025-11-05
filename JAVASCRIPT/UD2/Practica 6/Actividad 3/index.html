@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 3</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contenedor {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        fieldset {
+            border: 3px solid rgb(28, 0, 128);
+            background-color: aqua;
+
+        }
+
+        legend {
+            border: 2px solid black;
+            background-color: white;
+        }
+
+        input {
+            width: 100%;
+            padding: 2px;
+        }
+
+        label {
+            padding: 2px;
+        }
+
+        .cont2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .div2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .labels {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .inputs {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .buttons {
+            padding-top: 10px;
+            padding-bottom: 5px;
+            display: flex;
+        }
+
+        .correcto {
+            background-color: aquamarine;
+        }
+
+        .incorrecto {
+            background-color: rgb(250, 103, 103);
+        }
+
+        #errores {
+            background-color: rgb(255, 148, 49);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor">
+        <form onsubmit="return confirm('¿Estás seguro de que quieres enviarlo?');">
+            <fieldset>
+                <legend>DWEC05 - Solución Tarea</legend>
+                <div class="cont2">
+                    <div class="div2">
+                        <div class="labels">
+                            <label for="nombre">Nombre: </label>
+                            <label for="apellidos">Apellidos: </label>
+                            <label for="edad">Edad: </label>
+                            <label for="nif">NIF: </label>
+                            <label for="email">E-mail: </label>
+                            <label for="provincia">Provincia: </label>
+                            <label for="fecha_nac">Fecha Nacimiento: </label>
+                            <label for="tel">Teléfono: </label>
+                            <label for="horas_visita">Hora de visita: </label>
+                        </div>
+                        <div class="inputs">
+                            <input type="text" id="nombre" name="nombre" onblur="aMayusculas(this)"
+                                onchange="comprobar(this)" required />
+                            <input type="text" id="apellidos" name="apellidos" onblur="aMayusculas(this)"
+                                onchange="comprobar(this)" required />
+                            <input type="number" id="edad" name="edad" min="0" max="105" onchange="comprobar(this)"
+                                required />
+                            <input type="text" id="dni" name="dni" onchange="comprobar(this)" required />
+                            <input type="email" id="email" name="email" onchange="comprobar(this)" required />
+                            <input list="provincias_lista" id="provincias" name="provincias" onchange="comprobarProvincia(this)" required>
+                            <datalist id="provincias_lista">
+                                <option value="Álava" />
+                                <option value="Albacete" />
+                                <option value="Alicante" />
+                                <option value="Almería" />
+                                <option value="Asturias" />
+                                <option value="Ávila" />
+                                <option value="Badajoz" />
+                                <option value="Barcelona" />
+                                <option value="Burgos" />
+                                <option value="Cáceres" />
+                                <option value="Cádiz" />
+                                <option value="Cantabria" />
+                                <option value="Castellón" />
+                                <option value="Ciudad Real" />
+                                <option value="Córdoba" />
+                                <option value="La Coruña" />
+                                <option value="Cuenca" />
+                                <option value="Gerona" />
+                                <option value="Granada" />
+                                <option value="Guadalajara" />
+                                <option value="Guipúzcoa" />
+                                <option value="Huelva" />
+                                <option value="Huesca" />
+                                <option value="Baleares" />
+                                <option value="Jaén" />
+                                <option value="León" />
+                                <option value="Lérida" />
+                                <option value="Lugo" />
+                                <option value="Madrid" />
+                                <option value="Málaga" />
+                                <option value="Murcia" />
+                                <option value="Navarra" />
+                                <option value="Orense" />
+                                <option value="Palencia" />
+                                <option value="Las Palmas" />
+                                <option value="Pontevedra" />
+                                <option value="La Rioja" />
+                                <option value="Salamanca" />
+                                <option value="Segovia" />
+                                <option value="Sevilla" />
+                                <option value="Soria" />
+                                <option value="Tarragona" />
+                                <option value="Santa Cruz de Tenerife" />
+                                <option value="Teruel" />
+                                <option value="Toledo" />
+                                <option value="Valencia" />
+                                <option value="Valladolid" />
+                                <option value="Vizcaya" />
+                                <option value="Zamora" />
+                                <option value="Zaragoza" />
+                            </datalist>
+                            <input type="date" id="fecha_nac" name="fecha_nac" onchange="comprobar(this)" required />
+                            <input type="tel" id="tel" name="tel" onchange="comprobar(this)" required />
+                            <input type="time" id="horas_visita" name="horas_visita" onchange="comprobar(this)"
+                                required />
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <input type="reset" value="Limpiar">
+                        <input type="submit" value="Enviar">
+                    </div>
+                    <div>
+                        <p id="errores"></p>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <script src="actividad_2_script.js"></script>
+</body>
+
+</html>
