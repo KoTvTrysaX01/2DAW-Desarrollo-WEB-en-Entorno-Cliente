@@ -1,0 +1,14 @@
+{
+  "name": "Practica",
+  "version": "1.0.0",
+  "description": "API simulada con JSON Server para pruebas y desarrollo",
+  "main": "script.js",
+  "scripts": {
+    "start": "json-server db.json --port 3000"
+  },
+  "author": "Vadim Elshin",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3"
+  }
+}

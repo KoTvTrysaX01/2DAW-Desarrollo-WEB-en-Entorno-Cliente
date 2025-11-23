@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sing Up</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="signin">
+            <form>
+                <h1>Sign In</h1>
+                <div class="input-container">
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" id="nombre" name="nombre" minlength="4" placeholder="Enter your username" />
+                </div>
+                <div class="input-container">
+                    <label for="password">Password: </label>
+                    <input type="password" id="password" name="password" minlength="4" placeholder="Enter your password" />
+                </div>
+                <input type="submit" id="submit" value="Log In" />
+            </form>
+            <div id="errorMsg"></div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>

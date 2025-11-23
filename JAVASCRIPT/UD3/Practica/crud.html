@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sing Up</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="crud.css">
+</head>
+
+<body>
+    <div id="header">
+        <h2 id="welcome">Welcome </h2>
+        <button id="goBack" onclick="location.href='index.html'">Log out</button>
+    </div>
+
+    <form id="usuarioForm">
+        <input type="hidden" id="usuarioId">
+        <input type="text" id="nombre" placeholder="Nombre" minlength="4" required>
+        <input type="password" id="password" placeholder="Password" minlength="4" required>
+        <button type="submit">Guardar</button>
+    </form>
+
+    <!-- Tabla para mostrar los usuarios -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Password</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="tablaUsuarios"></tbody>
+    </table>
+
+</body>
+<script src="crud.js"></script>
+
+</html>

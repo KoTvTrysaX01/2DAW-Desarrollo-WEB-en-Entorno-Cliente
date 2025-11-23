@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: lightseagreen;
+}
+
+table {
+    margin: 5rem;
+    width: 80vw;
+    border: 1px solid black;
+}
+
+
+th,
+td {
+    border: 1px solid black;
+    min-width: 15vw;
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+
+th {
+    background-color: lightcyan;
+}
+
+td {
+    background-color: lightblue;
+}
+
+
+
+button {
+    font-size: 1.5rem;
+    align-self: center;
+    padding: 0.5rem 1.5rem;
+    border-radius: 15px;
+}
+
+.acciones {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+#header {
+    background-color: antiquewhite;
+    height: 15vh;
+    padding: 1rem;
+    margin: 2rem;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 55px;
+
+}
+
+#btn-editar {
+    background-color: lightgoldenrodyellow;
+}
+
+#btn-eliminar {
+    background-color: lightpink;
+}
+
+#goBack{
+    background-color: aqua;
+    padding: 0.5rem 5rem;
+}
+
+input{
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+#usuarioForm{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: aquamarine;
+    padding: 1.5rem;
+    min-width: 50%;
+    border-radius: 10px;
+}
