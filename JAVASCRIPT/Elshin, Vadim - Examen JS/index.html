@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de alta en cursos de informática</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <h1>Formulario de alta en cursos de informática</h1>
+
+  <form id="formularioCurso" novalidate>
+    <!-- Nombre -->
+    <label for="nombre">Nombre completo:</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre completo" onblur="validarCampo(this)">
+
+    <!-- DNI -->
+    <label for="dni">DNI:</label>
+    <input type="text" id="dni" name="dni" placeholder="Ej: 12345678Z" onchange="validarDNI(this.value)">
+
+    <!-- Email -->
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" onchange="validarEmail(this.value)">
+
+    <!-- Teléfono -->
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" name="telefono" placeholder="9 dígitos numéricos" onchange="validarTelefono(this.value)">
+
+    <!-- Curso principal -->
+    <label for="curso">Curso principal:</label>
+    <select id="curso" name="curso" onchange="mostrarOpcionesCurso(this.value)">
+      <option value="">[Selecciona un curso]</option>
+      <option value="introduccion-js">Introducción a JavaScript</option>
+      <option value="desarrollo-react">Desarrollo React</option>
+      <option value="acceso-json">Acceso a JSON</option>
+    </select>
+
+    <!-- Select de niveles específicos -->
+    <div id="contenedorOpciones">
+      <label for="nivel">Nivel / Especialización:</label>
+      <select id="nivel" name="nivel">
+        <option value="">-- Esperando selección --</option>
+      </select>
+    </div>
+
+    <button type="submit" onclick="validarFormulario(event)">Enviar</button>
+  </form>
+
+  <div id="mensaje"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
