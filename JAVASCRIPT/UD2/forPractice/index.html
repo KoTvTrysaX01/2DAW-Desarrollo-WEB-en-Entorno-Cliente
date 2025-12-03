@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello Vadim</h1>
+    <p id="myP"></p>
+    <form>
+        <input type="file" id="myInput" />
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        var m = document.querySelector("myInput");
+
+        document.getElementById('myInput').onchange = function () {
+           // alert('Selected file: ' + this.value);
+            var file = document.getElementById("myInput").files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.readAsText(file, "UTF-8");
+                reader.onload = function (evt) {
+                    document.getElementById("myP").innerHTML = evt.target.result;
+                }
+                reader.onerror = function (evt) {
+                    document.getElementById("myP").innerHTML = "error reading file";
+                }
+            }
+        };
+
+
+
+    </script>
+</body>
+
+</html>
