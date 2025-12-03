@@ -1,0 +1,89 @@
+{
+    "usuarios": [
+        {
+            "id": "1234",
+            "nombre": "admin",
+            "rol": "administrador"
+        },
+        {
+            "id": "4321",
+            "nombre": "usuario1",
+            "rol": "profesor"
+        },
+        {
+            "id": "2143",
+            "nombre": "usuario2",
+            "rol": "profesor"
+        },
+        {
+            "id": "2143",
+            "nombre": "usuario3",
+            "rol": "profesor"
+        }
+    ],
+    "reservas": [
+        {
+            "usuario": "usuario1",
+            "aula": "1-A",
+            "dia": "2012-04-23",
+            "horaInicio": "9:00",
+            "horaFin": "10:00"
+        },
+        {
+            "usuario": "usuario1",
+            "aula": "2-A",
+            "dia": "2012-04-23",
+            "horaInicio": "9:00",
+            "horaFin": "10:00"
+        },
+        {
+            "usuario": "usuario2",
+            "aula": "3-A",
+            "dia": "2012-04-23",
+            "horaInicio": "9:00",
+            "horaFin": "10:00"
+        },
+        {
+            "usuario": "usuario3",
+            "aula": "1-B",
+            "dia": "2012-04-23",
+            "horaInicio": "9:00",
+            "horaFin": "10:00"
+        },
+        {
+            "usuario": "usuario1",
+            "aula": "2-B",
+            "dia": "2012-04-23",
+            "horaInicio": "9:00",
+            "horaFin": "10:00"
+        },
+        {
+            "usuario": "usuario1",
+            "aula": "3-B",
+            "dia": "2012-04-23",
+            "horaInicio": "9:00",
+            "horaFin": "10:00"
+        },
+        {
+            "usuario": "usuario3",
+            "aula": "1-C",
+            "dia": "2012-04-23",
+            "horaInicio": "9:00",
+            "horaFin": "10:00"
+        },
+        {
+            "usuario": "usuario2",
+            "aula": "2-C",
+            "dia": "2012-04-23",
+            "horaInicio": "9:00",
+            "horaFin": "10:00"
+        },
+        {
+            "usuario": "usuario2",
+            "aula": "3-C",
+            "dia": "2012-04-23",
+            "horaInicio": "9:00",
+            "horaFin": "10:00"
+        }
+    ]
+}

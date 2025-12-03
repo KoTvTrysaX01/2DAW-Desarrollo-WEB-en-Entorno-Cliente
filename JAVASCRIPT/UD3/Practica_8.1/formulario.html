@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario - Gestión de Aulas</title>
+</head>
+
+<body>
+    <form>
+        <div>
+            <label>Usuario</label>
+            <input type="text" name="usuario" readonly />
+        </div>
+        <div>
+            <label>Aula</label>
+            <select required>
+                <option>1-A</option>
+                <option>2-A</option>
+                <option>3-A</option>
+                <option>1-B</option>
+                <option>2-B</option>
+                <option>3-B</option>
+                <option>1-C</option>
+                <option>2-C</option>
+                <option>3-C</option>
+            </select>
+        </div>
+        <div>
+            <label>Date</label>
+            <input type="date" name="date" required />
+        </div>
+        <div>
+            <label>Hora Inicio</label>
+            <input type="time" name="horaInicio" required />
+        </div>
+        <div>
+            <label>Date</label>
+            <input type="time" name="horaFin" required />
+        </div>
+        <input type="submit" value="Reserva" />
+    </form>
+    <button>Salir</button>
+</body>
+
+</html>
