@@ -59,3 +59,9 @@ label{
 .incorrect{
     background-color: lightcoral;
 }
+
+#errorMsg{
+    margin-top: 1rem;
+    font-size: 2rem;
+    color: red;
+}

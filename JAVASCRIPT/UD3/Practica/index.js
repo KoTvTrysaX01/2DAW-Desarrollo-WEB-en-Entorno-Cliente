@@ -15,20 +15,23 @@ document.getElementById("submit").addEventListener("click", function (event) {
     var password = document.getElementById("password");
 
     if (!checkInput(nombre) || !checkInput(password)) {
-        document.getElementById("errorMsg").innerHTML = "Correct mistakes";
+        document.getElementById("errorMsg").innerHTML = "Corrija los errores";
     } else {
         fetch('http://localhost:3000/usuarios')
             .then(response => response.json())
             .then(data => {
                 [...data].some(function (element) {
                     if (element["nombre"] == nombre.value && element["password"] == password.value) {
+
+                        // No funciona en Chrome
+                        // Funciona en Firefox
                         document.cookie = `id=${element["id"]}`;
                         document.cookie = `username=${element["nombre"]}`;
                         document.cookie = `password=${element["password"]}`;
                         location.href="crud.html";
                         return true;
                     } else {
-                        console.log("error");
+                        document.getElementById("errorMsg").innerHTML = "El nombre de usuario o la contraseña son incorrectos";
                     }
                 })
             })
@@ -36,3 +39,6 @@ document.getElementById("submit").addEventListener("click", function (event) {
         document.getElementById("errorMsg").innerHTML = "";
     }
 });
+
+
+console.log(Number("123"));

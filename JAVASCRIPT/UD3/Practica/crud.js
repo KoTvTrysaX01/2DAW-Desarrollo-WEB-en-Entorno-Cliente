@@ -8,8 +8,10 @@ const passwordInput = document.getElementById('password');
 
 //  Leer (GET) 
 async function cargarUsuarios() {
-    let username = getCookie("username")
-    document.getElementById("welcome").textContent = `Welcome ${username}`;
+
+
+    let username = getCookie("username");
+    document.getElementById("welcome").textContent = `Bienvenido ${username}`;
     const respuesta = await fetch(API_URL);
     const usuarios = await respuesta.json();
 
@@ -35,8 +37,8 @@ form.addEventListener('submit', async (e) => {
     const id = idInput.value;
     const nombre = nombreInput.value.trim();
     const password = passwordInput.value.trim();
-
-    const usuario = { nombre, password };
+    //const usuario = { "id": 1, nombre, password }; // Si se especifica un valor de identificación dentro del objeto, el valor de ID no se aleatorizará
+    const usuario = {nombre, password };
     if (id) {
         // Actualizar (PUT) 
         await fetch(`${API_URL}/${id}`, {
@@ -46,6 +48,7 @@ form.addEventListener('submit', async (e) => {
         });
     } else {
         // Crear (POST) 
+        // ¿Crea un valor aleatorio en el campo ID porque no se proporciona ningún valor?
         await fetch(API_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -105,5 +108,3 @@ document.getElementById("goBack").addEventListener("click", e => {
 
 // Cargar los usuarios al iniciar 
 cargarUsuarios();
-
-console.log(document.cookie);
