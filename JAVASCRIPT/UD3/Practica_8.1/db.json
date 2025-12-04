@@ -1,23 +1,23 @@
 {
     "usuarios": [
         {
-            "id": "1234",
             "nombre": "admin",
+            "password": "123",
             "rol": "administrador"
         },
         {
-            "id": "4321",
             "nombre": "usuario1",
+            "password": "123",
             "rol": "profesor"
         },
         {
-            "id": "2143",
             "nombre": "usuario2",
+            "password": "123",
             "rol": "profesor"
         },
         {
-            "id": "2143",
             "nombre": "usuario3",
+            "password": "123",
             "rol": "profesor"
         }
     ],

@@ -5,17 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario - Gestión de Aulas</title>
+    <link rel="stylesheet" href="form.css">
 </head>
 
 <body>
     <form>
-        <div>
+        <div class="row-container">
             <label>Usuario</label>
             <input type="text" name="usuario" readonly />
         </div>
-        <div>
+        <div class="row-container">
             <label>Aula</label>
             <select required>
+                <option value="" selected disabled hidden>Choose here</option>
                 <option>1-A</option>
                 <option>2-A</option>
                 <option>3-A</option>
@@ -27,21 +29,19 @@
                 <option>3-C</option>
             </select>
         </div>
-        <div>
+        <div class="row-container">
             <label>Date</label>
             <input type="date" name="date" required />
         </div>
-        <div>
+        <div class="row-container">
             <label>Hora Inicio</label>
             <input type="time" name="horaInicio" required />
-        </div>
-        <div>
-            <label>Date</label>
+            <label>Hora Fin</label>
             <input type="time" name="horaFin" required />
         </div>
         <input type="submit" value="Reserva" />
+        <button>Salir</button>
     </form>
-    <button>Salir</button>
 </body>
 
 </html>
