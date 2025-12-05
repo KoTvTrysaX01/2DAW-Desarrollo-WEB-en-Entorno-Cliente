@@ -9,9 +9,9 @@ function checkInput(field) {
 }
 
 
-document.getElementById("submit").addEventListener("click", function (event) {
+document.getElementById("entrar").addEventListener("click", function (event) {
     event.preventDefault()
-    var nombre = document.getElementById("usuario");
+    var nombre = document.getElementById("username");
     var password = document.getElementById("password");
 
     if (!checkInput(nombre) || !checkInput(password)) {
@@ -21,10 +21,9 @@ document.getElementById("submit").addEventListener("click", function (event) {
             .then(response => response.json())
             .then(data => {
                 [...data].some(function (element) {
-                    if (element["nombre"] == nombre.value && element["password"] == password.value) {
-                        document.cookie = `username=${element["nombre"]}`;
-                        document.cookie = `password=${element["password"]}`;
-                        location.href = "index.html";
+                    if (element["username"] == nombre.value && element["password"] == password.value) {
+                        localStorage.setItem("username", element["username"]);
+                        location.href = "../html/index.html";
                         return true;
                     } else {
                         document.getElementById("errores").innerHTML = "El nombre de usuario o la contraseña son incorrectos";

@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Login Page</title>
+        <title>Gestión de Aulas - Login</title>
         <link rel="stylesheet" href="../css/login.css">
     </head>
     <body>
         
         <div class="main-box">
 
-            <h1>Login Here</h1>
+            <h1>Login</h1>
 
             <form>
 
                 <label for="username">Username</label>
-                <input type="text" name="username" placeholder="Enter Username">
+                <input type="text" minlength="3" id="username" name="username" placeholder="Enter Username">
 
                 <label for="password">Password</label>
-                <input type="password" name="password" placeholder="Enter Password">
+                <input type="password" minlength="3" id="password" name="password" placeholder="Enter Password">
 
-                <input type="submit" value="Login">
+                <input type="submit" id="entrar" value="Entrar">
             </form>
-            <div class="errors">
+            <div id="errores">
 
             </div>
         </div>
-
+        <script src="../javascript/login.js"></script>
     </body>
 </html>

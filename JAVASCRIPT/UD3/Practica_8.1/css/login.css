@@ -89,3 +89,16 @@ h1 {
 .main-box a:hover {
     text-decoration: underline;
 }
+
+.incorrect{
+    background-color: lightcoral !important;
+}
+
+.correct{
+    background-color: lightgreen !important;
+}
+
+#errores{
+    color: lightcoral;
+    font-weight: bold;
+}

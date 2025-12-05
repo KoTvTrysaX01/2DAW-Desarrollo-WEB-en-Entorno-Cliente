@@ -3,6 +3,16 @@
     padding: 0;
 }
 
+body {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
 .styled-table {
     border-collapse: collapse;
     margin: 25px 0;
@@ -42,4 +52,30 @@
 .styled-table tbody tr.active-row {
     font-weight: bold;
     color: #009879;
+}
+
+
+
+
+.buttons {
+
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    padding: 7px 16px;
+    min-height: 36px;
+    min-width: 36px;
+    color: #ffffff;
+    background: #008060;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+
+    &:hover {
+        background: #00503c;
+    }
+
 }

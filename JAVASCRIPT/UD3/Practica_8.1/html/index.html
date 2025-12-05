@@ -9,38 +9,31 @@
 </head>
 
 <body>
-    <table class="styled-table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Points</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Dom</td>
-                <td>6000</td>
-            </tr>
-            <tr class="active-row">
-                <td>Melissa</td>
-                <td>5150</td>
-            </tr>
-            <tr class="active-row">
-                <td>Melissa</td>
-                <td>5150</td>
-            </tr>
-            <tr class="active-row">
-                <td>Melissa</td>
-                <td>5150</td>
-            </tr>
-            <tr>
-                <td>Dom</td>
-                <td>6000</td>
-            </tr>
-        </tbody>
-    </table>
+    <div>
+        <h1 id="welcome-msg">Welcome</h1>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Aula</th>
+                    <th>Usuario</th>
+                    <th>Día</th>
+                    <th>Hora Inicio</th>
+                    <th>Hora Fin</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tablaUsuarios">
+            </tbody>
+        </table>
+        <div>
+            <button class="buttons" onclick="salir()">Salir</button>
+            <button class="buttons" onclick="reservar()">Reservar Aula</button>
+        </div>
+    </div>
 
 
+    <script src="../javascript/index.js"></script>
 </body>
 
 </html>

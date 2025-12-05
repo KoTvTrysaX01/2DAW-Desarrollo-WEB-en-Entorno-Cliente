@@ -1,89 +1,74 @@
 {
-    "usuarios": [
-        {
-            "nombre": "admin",
-            "password": "123",
-            "rol": "administrador"
-        },
-        {
-            "nombre": "usuario1",
-            "password": "123",
-            "rol": "profesor"
-        },
-        {
-            "nombre": "usuario2",
-            "password": "123",
-            "rol": "profesor"
-        },
-        {
-            "nombre": "usuario3",
-            "password": "123",
-            "rol": "profesor"
-        }
-    ],
-    "reservas": [
-        {
-            "usuario": "usuario1",
-            "aula": "1-A",
-            "dia": "2012-04-23",
-            "horaInicio": "9:00",
-            "horaFin": "10:00"
-        },
-        {
-            "usuario": "usuario1",
-            "aula": "2-A",
-            "dia": "2012-04-23",
-            "horaInicio": "9:00",
-            "horaFin": "10:00"
-        },
-        {
-            "usuario": "usuario2",
-            "aula": "3-A",
-            "dia": "2012-04-23",
-            "horaInicio": "9:00",
-            "horaFin": "10:00"
-        },
-        {
-            "usuario": "usuario3",
-            "aula": "1-B",
-            "dia": "2012-04-23",
-            "horaInicio": "9:00",
-            "horaFin": "10:00"
-        },
-        {
-            "usuario": "usuario1",
-            "aula": "2-B",
-            "dia": "2012-04-23",
-            "horaInicio": "9:00",
-            "horaFin": "10:00"
-        },
-        {
-            "usuario": "usuario1",
-            "aula": "3-B",
-            "dia": "2012-04-23",
-            "horaInicio": "9:00",
-            "horaFin": "10:00"
-        },
-        {
-            "usuario": "usuario3",
-            "aula": "1-C",
-            "dia": "2012-04-23",
-            "horaInicio": "9:00",
-            "horaFin": "10:00"
-        },
-        {
-            "usuario": "usuario2",
-            "aula": "2-C",
-            "dia": "2012-04-23",
-            "horaInicio": "9:00",
-            "horaFin": "10:00"
-        },
-        {
-            "usuario": "usuario2",
-            "aula": "3-C",
-            "dia": "2012-04-23",
-            "horaInicio": "9:00",
-            "horaFin": "10:00"
-        }
-    ]
+  "usuarios": [
+    {
+      "username": "admin",
+      "password": "123",
+      "rol": "administrador"
+    },
+    {
+      "username": "usuario1",
+      "password": "123",
+      "rol": "profesor"
+    },
+    {
+      "username": "usuario2",
+      "password": "123",
+      "rol": "profesor"
+    },
+    {
+      "username": "usuario3",
+      "password": "123",
+      "rol": "profesor"
+    }
+  ],
+  "reservas": [
+    {
+      "id": "2",
+      "username": "usuario1",
+      "aula": "2-A",
+      "dia": "2012-04-23",
+      "horaInicio": "9:00",
+      "horaFin": "10:00"
+    },
+    {
+      "id": "3",
+      "username": "usuario2",
+      "aula": "3-A",
+      "dia": "2012-04-23",
+      "horaInicio": "9:00",
+      "horaFin": "10:00"
+    },
+    {
+      "id": "4",
+      "username": "usuario3",
+      "aula": "1-B",
+      "dia": "2012-04-25",
+      "horaInicio": "10:00",
+      "horaFin": "10:00"
+    },
+    {
+      "id": "7",
+      "username": "usuario3",
+      "aula": "1-C",
+      "dia": "2012-04-23",
+      "horaInicio": "9:00",
+      "horaFin": "10:00"
+    },
+    {
+      "id": "8",
+      "username": "usuario2",
+      "aula": "2-C",
+      "dia": "2012-04-23",
+      "horaInicio": "9:00",
+      "horaFin": "10:00"
+    },
+    {
+      "id": "9",
+      "username": "usuario2",
+      "aula": "3-C",
+      "dia": "2012-04-23",
+      "horaInicio": "9:00",
+      "horaFin": "10:00"
+    }
+  ]
 }

@@ -1,47 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario - Gestión de Aulas</title>
-    <link rel="stylesheet" href="form.css">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../css/form.css">
 </head>
 
 <body>
-    <form>
-        <div class="row-container">
-            <label>Usuario</label>
-            <input type="text" name="usuario" readonly />
-        </div>
-        <div class="row-container">
-            <label>Aula</label>
-            <select required>
-                <option value="" selected disabled hidden>Choose here</option>
-                <option>1-A</option>
-                <option>2-A</option>
-                <option>3-A</option>
-                <option>1-B</option>
-                <option>2-B</option>
-                <option>3-B</option>
-                <option>1-C</option>
-                <option>2-C</option>
-                <option>3-C</option>
+    <div class="form-wrap">
+        <form>
+            <h1>Reservar Aula</h1>
+            <h2>Username</h2>
+            <select>
+                <option selected disabled>--Selecciona una opción--</option>
+                <optgroup label="Mi optgroup">
+                    <option>1-A</option>
+                    <option>2-A</option>
+                    <option>3-A</option>
+                </optgroup>
+                <optgroup label="Mi optgroup B">
+                    <option>1-B</option>
+                    <option>2-B</option>
+                    <option>3-B</option>
+                </optgroup>
+                <optgroup label="Mi optgroup C">
+                    <option>1-C</option>
+                    <option>2-C</option>
+                    <option>3-C</option>
+                </optgroup>
             </select>
-        </div>
-        <div class="row-container">
-            <label>Date</label>
-            <input type="date" name="date" required />
-        </div>
-        <div class="row-container">
-            <label>Hora Inicio</label>
-            <input type="time" name="horaInicio" required />
-            <label>Hora Fin</label>
-            <input type="time" name="horaFin" required />
-        </div>
-        <input type="submit" value="Reserva" />
-        <button>Salir</button>
-    </form>
+            <input type="date" placeholder="Dia">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Confirm Password">
+            <input type="button" value="Sign Up">
+        </form>
+    </div>
 </body>
 
 </html>
