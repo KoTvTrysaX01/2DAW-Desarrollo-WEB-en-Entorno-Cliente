@@ -23,6 +23,8 @@ document.getElementById("entrar").addEventListener("click", function (event) {
                 [...data].some(function (element) {
                     if (element["username"] == nombre.value && element["password"] == password.value) {
                         localStorage.setItem("username", element["username"]);
+                        console.log(localStorage.getItem("username"));
+                        
                         location.href = "../html/index.html";
                         return true;
                     } else {

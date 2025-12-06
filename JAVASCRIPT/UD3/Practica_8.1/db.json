@@ -3,22 +3,26 @@
     {
       "username": "admin",
       "password": "123",
-      "rol": "administrador"
+      "rol": "administrador",
+      "id": "0876"
     },
     {
       "username": "usuario1",
       "password": "123",
-      "rol": "profesor"
+      "rol": "profesor",
+      "id": "07d6"
     },
     {
       "username": "usuario2",
       "password": "123",
-      "rol": "profesor"
+      "rol": "profesor",
+      "id": "58ac"
     },
     {
       "username": "usuario3",
       "password": "123",
-      "rol": "profesor"
+      "rol": "profesor",
+      "id": "6248"
     }
   ],
   "reservas": [
