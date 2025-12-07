@@ -11,7 +11,11 @@ body {
     text-align: center;
 }
 
-
+#welcome-msg{
+    margin-top: 2rem;
+    color: #009879;
+    font-weight: bold;
+}
 
 .styled-table {
     border-collapse: collapse;
@@ -100,14 +104,14 @@ th{
 
 
 
-.form-wrap {
+#form-wrap {
     margin: 2rem 0;
     width: 30%;
-    background: #3e3d3d;
+    background: #009879;
     padding: 1rem 1rem;
     box-sizing: border-box;
     border-radius: 15px;
-
+    visibility: hidden;
 }
 
 form{
@@ -145,14 +149,14 @@ input {
 }
 
 input[type="submit"] {
-    background: #bac675;
+    background: #005741;
     border: 0;
     cursor: pointer;
-    color: #3e3d3d;
+    color: #fff;
 }
 
 input[type="submit"]:hover {
-    background: #a4b15c;
+    background: #00241b;
     transition: .6s;
 }
 
@@ -201,4 +205,24 @@ option {
 
 ::-webkit-calendar-picker-indicator {
     filter: invert(1);
+}
+
+
+#errores{
+    font-size: 24px;
+    color: white;
+}
+
+.incorrect{
+    background-color: lightcoral;
+    animation: fadeIn 0.5s 3s ease-out forwards,  changeColor 3s  1s ease-out forwards;
+}
+
+.correct{
+    background-color: lightgreen;
+    animation: fadeIn 0.5s 3s ease-out forwards,  changeColor 3s  1s ease-out forwards;
+}
+
+@keyframes changeColor{
+  to{background: none;}
 }

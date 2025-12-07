@@ -25,7 +25,7 @@ document.getElementById("entrar").addEventListener("click", function (event) {
                         localStorage.setItem("username", element["username"]);
                         console.log(localStorage.getItem("username"));
                         
-                        location.href = "../html/index.html";
+                        location.href = "../index/index.html";
                         return true;
                     } else {
                         document.getElementById("errores").innerHTML = "El nombre de usuario o la contraseña son incorrectos";

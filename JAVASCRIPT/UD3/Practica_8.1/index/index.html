@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel del Usuario - Gestión de Aulas</title>
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body onload="cargarData()">
@@ -33,11 +33,12 @@
             </div>
         </div>
 
-        <div class="form-wrap">
+        <div id="form-wrap">
             <form id="formulario">
                 <h1>Reservar Aula</h1>
                 <h1 id="usuarioNombre">Username</h1>
-                <select id="aulaInput">
+                <input type="text" id="idInput" hidden/> 
+                <select id="aulaInput" required>
                     <option selected disabled>--Selecciona una Aula--</option>
                     <optgroup label="Aula - A">
                         <option>1-A</option>
@@ -56,21 +57,20 @@
                     </optgroup>
                 </select>
                 <label>Día</label>
-                <input type="date" id="diaInput">
+                <input type="date" id="diaInput" required>
                 <label>Hora inicio</label>
-                <input type="time" id="horaInicioInput">
+                <input type="time" id="horaInicioInput" required>
                 <label>Hora Fin</label>
-                <input type="time" id="horaFinInput">
+                <input type="time" id="horaFinInput" required>
                 <input type="submit" value="Reservar">
             </form>
             <div id="errores">
-
             </div>
         </div>
     </div>
 
 
-    <script src="../javascript/index.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
