@@ -1,0 +1,10 @@
+// let edad: number = "30"; // "30" no es un número, es una cadena
+var edad = 30;
+//const activo1: Boolean = new Boolean(false); // Esto no crea un tipo booleano primitivo, sino un objeto Booleano.
+var activo = false;
+// const numeros: number[] = [1, 2, "3"]; // "3" no es un número, es una cadena
+var numeros = [1, 2, 3];
+// let coordenada: [number, number] = [40.4168]; // Es necesario especificar dos numeros
+var coordenada = [40.4168, 123];
+// let coordenada = [40.4168, "3.7038"]; // El segundo elemento es una cadena, no número
+var coordenada_2 = [40.4168, 3.7038];
