@@ -22,7 +22,6 @@ export default function App() {
     return (
       p.nombre.toLowerCase().includes(text) ||
       p.id.toLowerCase().includes(text) ||
-      p.autor.toLowerCase().includes(text) ||
       String(p.precio).includes(text)
     );
   });

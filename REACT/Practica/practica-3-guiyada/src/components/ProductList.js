@@ -6,15 +6,14 @@ export default function ProductList({ products, onAdd }) {
       disponibles.</p>;
   }
   return (
-    <div className="container mt-4 p-2 bg-dark">
-      <h2 className="mb-3 text-light text-center">Listado de Productos Informáticos</h2>
+    <div className="container mt-4">
+      <h2 className="mb-3">Listado de Productos Informáticos</h2>
       <table className="table table-striped table-bordered align-middle text-center">
-        <thead className="table-warning">
+        <thead className="table-dark">
           <tr>
             <th>Código</th>
             <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Autor</th>
+            <th>Descripción</th>
             <th>Precio (€)</th>
             <th>Disponible</th>
             <th>Añadir</th>
@@ -34,10 +33,8 @@ export default function ProductList({ products, onAdd }) {
                   style={{ width: "80px" }}
                 />
               </td>
-              {/* Nombre */}
+              {/* Descripción */}
               <td>{p.nombre}</td>
-              {/* Autor */}
-              <td>{p.autor}</td>
               {/* Precio */}
               <td>{p.precio.toFixed(2)}</td>
               {/* Disponible */}

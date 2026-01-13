@@ -15,7 +15,7 @@ export default function SearchBar({
             <div className="row justify-content-center">
                 <div className="col-12 col-md-10 col-lg-8">
                     <div className="input-group">
-                        <button className="btn btn-light border border-1" id="search-label" onClick={enfocar}>🔎Buscar</button>
+                        <span className="input-group-text" id="search-label" onClick={enfocar}>🔎Buscar</span>
                         <input
                             ref={inputRef}
                             type="text"
@@ -35,7 +35,7 @@ export default function SearchBar({
                         )}
                     </div>
                     <small className="text-muted d-block mt-1">
-                        Filtra en tiempo real por Codigo / Nombre / Autor / Precio. Ejemplos: <code>“nb-001”</code>, <code>“Crimen y castigo”</code>, <code>“Harlan Ellison”</code>, <code>“20.85”</code>.
+                        Filtra en tiempo real. Ejemplos: <code>“SSD”</code>, <code>“P1001”</code>, <code>“Lenovo”</code>.
                     </small>
                 </div>
             </div>
