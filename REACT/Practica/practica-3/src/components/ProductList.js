@@ -7,7 +7,7 @@ export default function ProductList({ products, onAdd }) {
   }
   return (
     <div className="container mt-4 p-2 bg-dark">
-      <h2 className="mb-3 text-light text-center">Listado de Productos Informáticos</h2>
+      <h2 className="mb-3 text-light text-center">La Biblioteca</h2>
       <table className="table table-striped table-bordered align-middle text-center">
         <thead className="table-warning">
           <tr>
