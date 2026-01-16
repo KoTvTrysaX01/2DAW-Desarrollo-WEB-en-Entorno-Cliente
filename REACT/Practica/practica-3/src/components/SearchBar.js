@@ -4,7 +4,7 @@ export default function SearchBar({
     query,
     onChange,
     onClear,
-    placeholder = 'Buscar productos por nombre, código o descripción…',
+    placeholder = 'Buscar libros por código, nombre, autor o precio',
 }) {
     const handleInput = (e) => onChange(e.target.value);
     const handleClear = () => onClear?.();
@@ -15,15 +15,15 @@ export default function SearchBar({
             <div className="row justify-content-center">
                 <div className="col-12 col-md-10 col-lg-8">
                     <div className="input-group">
-                        <button className="btn btn-light border border-1" id="search-label" onClick={enfocar}>🔎Buscar</button>
+                        <button className="btn btn-info text-light fw-bold border border-1 border-info" id="search-label" onClick={enfocar}>🔎Buscar</button>
                         <input
                             ref={inputRef}
                             type="text"
                             value={query}
                             onChange={handleInput}
-                            className="form-control"
+                            className="form-control border border-info"
                             placeholder={placeholder}
-                            aria-label="Barra de búsqueda de productos"
+                            aria-label="Barra de búsqueda de libros"
                             aria-describedby="search-label"
                         />
                         {query && (
@@ -34,7 +34,7 @@ export default function SearchBar({
                                 title="Limpiar búsqueda">Limpiar</button>
                         )}
                     </div>
-                    <small className="text-muted d-block mt-1">
+                    <small className="text-dark d-block mt-1">
                         Filtra en tiempo real por Codigo / Nombre / Autor / Precio. Ejemplos: <code>“nb-001”</code>, <code>“Crimen y castigo”</code>, <code>“Harlan Ellison”</code>, <code>“20.85”</code>.
                     </small>
                 </div>

@@ -6,10 +6,10 @@ export default function ProductList({ products, onAdd }) {
       disponibles.</p>;
   }
   return (
-    <div className="container mt-4 p-2 bg-dark">
-      <h2 className="mb-3 text-light text-center">La Biblioteca</h2>
+    <div className="container mt-4 px-2 py-2 bg-primary rounded-1">
+      <h2 className="mb-3 text-light text-center fw-bold">La Biblioteca</h2>
       <table className="table table-striped table-bordered align-middle text-center">
-        <thead className="table-warning">
+        <thead className="table-primary">
           <tr>
             <th>Código</th>
             <th>Imagen</th>
@@ -42,18 +42,17 @@ export default function ProductList({ products, onAdd }) {
               <td>{p.precio.toFixed(2)}</td>
               {/* Disponible */}
               <td>
-                <span className={`badge ${p.enStock ? 'bg-success' : 'bg-danger'}`}>
+                <span className={`badge py-2 px-3 ${p.enStock ? 'bg-success' : 'bg-danger'}`}>
                   {p.enStock ? 'Sí' : 'No'}
                 </span>
               </td>
               {/* Botón Añadir */}
               <td>
                 <button
-                  className="btn btn-primary btn-sm"
+                  className="btn btn-info btn-sm text-light"
                   disabled={!p.enStock}
-                  onClick={() => onAdd?.(p)}
-                >
-                  Añadir
+                  onClick={() => onAdd?.(p)}>
+                    Añadir
                 </button>
               </td>
             </tr>

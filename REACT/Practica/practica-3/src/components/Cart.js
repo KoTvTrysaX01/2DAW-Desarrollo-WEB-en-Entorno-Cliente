@@ -6,11 +6,14 @@ export default function Cart({ items = [] }) {
                 suma += libro.precio;
                 });
     return (
-        <div className="cart d-flex align-items-center flex-column">
-            <span className="bg-warning p-2 rounded-3">
+        <div className="cart container d-flex justify-content-around align-items-center">
+            <span className="border border-2 border-info  text-dark p-2 rounded-3 ">
                 Carrito ({total} {total === 1 ? 'libro' : 'libros'})
             </span>
-            <span className=''>Precio final: {Math.round(suma * 100) / 100}</span>
+            <div className='bg-info border border-2 border-info text-light p-2 rounded-3 text-center'>
+                <span className='fw-bold'>Precio final: {Math.round(suma * 100) / 100} €</span>
+            </div>
+            
         </div>
     )
 };
