@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 export default function Cart({ items = [] }) {
     const total = items.length;
     let suma = 0;

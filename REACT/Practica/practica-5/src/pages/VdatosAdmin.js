@@ -40,6 +40,10 @@ export default function VdatosAdmin() {
           <label className="form-label">Nombre</label>
           <input className="form-control" value={form.nombre} onChange={(e) => setForm({ ...form, nombre: e.target.value })} required />
         </div>
+        <div className="col-md-3">
+          <label className="form-label">Autor</label>
+          <input className="form-control" value={form.autor} onChange={(e) => setForm({ ...form, autor: e.target.value })} required />
+        </div>
         <div className="col-md-2">
           <label className="form-label">Precio (€)</label>
           <input type="number" step="0.01" min="0" className="form-control" value={form.precio} onChange={(e) => setForm({ ...form, precio: e.target.value })} required />
@@ -65,7 +69,7 @@ export default function VdatosAdmin() {
         <table className="table table-striped align-middle">
           <thead>
             <tr>
-              <th>ID</th><th>Nombre</th><th>Precio</th><th>Stock</th><th style={{width: 220}}>Acciones</th>
+              <th>ID</th><th>Nombre</th><th>Autor</th><th>Precio</th><th>Stock</th><th style={{ width: 220 }}>Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -73,6 +77,7 @@ export default function VdatosAdmin() {
               <tr key={p.id}>
                 <td>{p.id}</td>
                 <td>{p.nombre}</td>
+                <td>{p.autor}</td>
                 <td>{p.precio.toFixed(2)} €</td>
                 <td><span className={`badge ${p.enStock ? "bg-success" : "bg-danger"}`}>{p.enStock ? "Sí" : "No"}</span></td>
                 <td className="d-flex gap-2">

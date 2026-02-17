@@ -1,8 +1,9 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-
+import { useState } from "react";
 // Páginas
 import Home from "../pages/Home";
 import Vdatos from "../pages/Vdatos";
+import Cart from "../components/Cart";
 import VdatosDetail from "../pages/VdatosDetail";
 import VdatosAdmin from "../pages/VdatosAdmin"
 import Login from "../pages/Login";
@@ -15,35 +16,47 @@ import Settings from "../pages/Dashboard/Settings";
 // Rutas protegidas
 import ProtectedRoute from "../components/ProtectedRoute";
 
+
+
 export default function AppRouter() {
+  const [cartItems, setCartItems] = useState([]);
+  const addToCart = (product) => {
+    setCartItems([...cartItems, product]);
+  };
+
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
+    <>
+      <Cart items={cartItems} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Vdatos onAdd={addToCart} />} />
+        <Route path="/products/:id" element={<VdatosDetail />} />
 
-      <Route path="/products" element={<Vdatos />} />
-      <Route path="/products/:id" element={<VdatosDetail />} />
-	  <Route path="/admin/products" element={<VdatosAdmin />} />
+        <Route path="/admin/products" element={<ProtectedRoute>
+              <VdatosAdmin />
+            </ProtectedRoute>} />
 
-      <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
 
-      {/* Rutas anidadas protegidas */}
-      <Route
-        path="/dashboard"
-        element={(
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        )}
-      >
-        <Route path="profile" element={<Profile />} />
-        <Route path="settings" element={<Settings />} />
-      </Route>
+        {/* Rutas anidadas protegidas */}
+        <Route
+          path="/dashboard"
+          element={(
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          )}
+        >
+          <Route path="profile" element={<Profile />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
 
-      {/* Redirección de rutas antiguas */}
-      <Route path="/old-products" element={<Navigate to="/products" replace />} />
+        {/* Redirección de rutas antiguas */}
+        <Route path="/old-products" element={<Navigate to="/products" replace />} />
 
-      {/* 404 */}
-      <Route path="*" element={<h2>Página no encontrada</h2>} />
-    </Routes>
+        {/* 404 */}
+        <Route path="*" element={<h2>Página no encontrada</h2>} />
+      </Routes>
+    </>
   );
 }
