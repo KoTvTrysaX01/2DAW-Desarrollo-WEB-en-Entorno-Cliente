@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useLocalDB } from "../hooks/useLocalDB";
 
-export default function Vdatos({onAdd}) {
+export default function Products() {
   const { data, loading, search, remove } = useLocalDB();
   const [query, setQuery] = useState("");
 
@@ -30,12 +30,12 @@ export default function Vdatos({onAdd}) {
 
       <div className="row g-3">
         {items.map((p) => (
-          <div key={p.id} className="col-6 col-md-4 col-lg-3 ">
-            <div className="card h-100 align-items-stretch ustify-content-between">
+          <div key={p.id} className="col-12 col-md-6 col-lg-4">
+            <div className="card h-100">
               {p.imagen && (
-                <img src={p.imagen} className="card-img-top w-100" alt={p.nombre} />
+                <img src={p.imagen} className="card-img-top" alt={p.nombre} />
               )}
-              <div className="card-body flex-column justify-content-around">
+              <div className="card-body">
                 <h5 className="card-title">{p.nombre}</h5>
                 <p className="card-text mb-1">
                   <strong>Precio:</strong> {p.precio.toFixed(2)} €
@@ -49,11 +49,6 @@ export default function Vdatos({onAdd}) {
                   <Link className="btn btn-primary btn-sm" to={`/products/${p.id}`}>
                     Ver detalle
                   </Link>
-                  <button className="btn btn-success btn-sm"
-                  disabled={!p.enStock}
-                  onClick={() => onAdd?.(p)}>
-                    Comprar
-                  </button>
                   <button
                     className="btn btn-outline-danger btn-sm"
                     onClick={() => remove(p.id)}

@@ -6,7 +6,7 @@
       "autor": "J. K. Rowling",
       "precio": 37.95,
       "enStock": false,
-      "imagen": "assets/harry-potter-y-la-piedra-filosofal.jpg"
+      "imagen": "/assets/harry-potter-y-la-piedra-filosofal.jpg"
     },
     {
       "id": "vm-080",

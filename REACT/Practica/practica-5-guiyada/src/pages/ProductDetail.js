@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useLocalDB } from "../hooks/useLocalDB";
 
-export default function VdatosDetail() {
+export default function ProductDetail() {
   const { id } = useParams();
   const { findById } = useLocalDB();
   const product = findById(id);
@@ -26,7 +26,6 @@ export default function VdatosDetail() {
           style={{ maxWidth: 320 }}
         />
       )}
-      <p><strong>Autor:</strong> {product.autor}</p>
       <p><strong>Código:</strong> {product.id}</p>
       <p><strong>Precio:</strong> {product.precio.toFixed(2)} €</p>
       <p><strong>Disponible:</strong> {product.enStock ? "Sí" : "No"}</p>

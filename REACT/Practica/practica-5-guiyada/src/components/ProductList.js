@@ -6,15 +6,14 @@ export default function ProductList({ products, onAdd }) {
       disponibles.</p>;
   }
   return (
-    <div className="container mt-4 px-2 py-2 bg-primary rounded-1">
-      <h2 className="mb-3 text-light text-center fw-bold">La Biblioteca</h2>
+    <div className="container mt-4">
+      <h2 className="mb-3">Listado de Productos Informáticos</h2>
       <table className="table table-striped table-bordered align-middle text-center">
-        <thead className="table-primary">
+        <thead className="table-dark">
           <tr>
             <th>Código</th>
             <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Autor</th>
+            <th>Descripción</th>
             <th>Precio (€)</th>
             <th>Disponible</th>
             <th>Añadir</th>
@@ -34,25 +33,24 @@ export default function ProductList({ products, onAdd }) {
                   style={{ width: "80px" }}
                 />
               </td>
-              {/* Nombre */}
+              {/* Descripción */}
               <td>{p.nombre}</td>
-              {/* Autor */}
-              <td>{p.autor}</td>
               {/* Precio */}
               <td>{p.precio.toFixed(2)}</td>
               {/* Disponible */}
               <td>
-                <span className={`badge py-2 px-3 ${p.enStock ? 'bg-success' : 'bg-danger'}`}>
+                <span className={`badge ${p.enStock ? 'bg-success' : 'bg-danger'}`}>
                   {p.enStock ? 'Sí' : 'No'}
                 </span>
               </td>
               {/* Botón Añadir */}
               <td>
                 <button
-                  className="btn btn-info btn-sm text-light"
+                  className="btn btn-primary btn-sm"
                   disabled={!p.enStock}
-                  onClick={() => onAdd?.(p)}>
-                    Añadir
+                  onClick={() => onAdd?.(p)}
+                >
+                  Añadir
                 </button>
               </td>
             </tr>
